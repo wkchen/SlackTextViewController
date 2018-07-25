@@ -166,7 +166,17 @@ static NSString *const SLKTextViewGenericFormattingSelectorPrefix = @"slk_format
     
 - (NSUInteger)minNumberOfLines
 {
-    return 2;
+    NSUInteger numberOfLines = _minNumberOfLines;
+    
+    if (numberOfLines > _maxNumberOfLines) {
+        numberOfLines = _maxNumberOfLines;
+    }
+    
+    if (numberOfLines < 1) {
+        numberOfLines = 1;
+    }
+    
+    return numberOfLines;
 }
 
 - (NSUInteger)numberOfLines
