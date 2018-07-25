@@ -89,12 +89,11 @@ static NSString *const SLKTextViewGenericFormattingSelectorPrefix = @"slk_format
     [self addObserver:self forKeyPath:NSStringFromSelector(@selector(contentSize)) options:NSKeyValueObservingOptionNew context:NULL];
 }
 
-
 #pragma mark - UIView Overrides
 
 - (CGSize)intrinsicContentSize
 {
-    CGFloat height = self.font.lineHeight + self.font.lineHeight;
+    CGFloat height = self.font.lineHeight;
     height += self.textContainerInset.top + self.textContainerInset.bottom;
     
     return CGSizeMake(UIViewNoIntrinsicMetric, height);
