@@ -93,7 +93,7 @@ static NSString *const SLKTextViewGenericFormattingSelectorPrefix = @"slk_format
 
 - (CGSize)intrinsicContentSize
 {
-    CGFloat height = self.font.lineHeight;
+    CGFloat height = self.font.lineHeight * self.minNumberOfLines;
     height += self.textContainerInset.top + self.textContainerInset.bottom;
     
     return CGSizeMake(UIViewNoIntrinsicMetric, height);
