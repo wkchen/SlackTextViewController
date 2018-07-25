@@ -56,6 +56,9 @@ UIKIT_EXTERN NSString * const SLKTextViewPastedItemData;
 /** The maximum number of lines before enabling scrolling. Default is 0 wich means limitless.
  If dynamic type is enabled, the maximum number of lines will be calculated proportionally to the user preferred font size. */
 @property (nonatomic, readwrite) NSUInteger maxNumberOfLines;
+    
+/** Minimum number of lines */
+@property (nonatomic, readwrite) NSUInteger minNumberOfLines;
 
 /** The current displayed number of lines. */
 @property (nonatomic, readonly) NSUInteger numberOfLines;

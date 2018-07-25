@@ -163,6 +163,11 @@ static NSString *const SLKTextViewGenericFormattingSelectorPrefix = @"slk_format
 {
     return self.placeholderLabel.font;
 }
+    
+- (NSUInteger)minNumberOfLines
+{
+    return 2;
+}
 
 - (NSUInteger)numberOfLines
 {
@@ -181,8 +186,8 @@ static NSString *const SLKTextViewGenericFormattingSelectorPrefix = @"slk_format
     }
     
     // Let's fallback to the minimum line count
-    if (lines == 0) {
-        lines = 1;
+    if (lines <= self.minNumberOfLines) {
+        lines = self.minNumberOfLines;
     }
     
     return lines;
